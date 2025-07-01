@@ -8,9 +8,9 @@ var deletables = [];
 var clickListener = null;
 
 BBPlugin.register('wakatime', {
-    title: 'WakaTime',
+    title: 'HackaTime',
     icon: 'fas.fa-circle-check',
-    author: 'yusshu',
+    author: 'yusshu, conishadow',
     description: 'The plugin for productivity metrics, goals, leaderboards, and automatic time tracking.',
     about: 'Automatic time tracking and stats about your Blockbench usage.',
     version: pluginVersion,
@@ -19,9 +19,9 @@ BBPlugin.register('wakatime', {
     onload() {
         // Register API key setting and get the value
         deletables.push(new Setting('wakatime_api_key', {
-            name: 'WakaTime API Key',
+            name: 'Hackatime API Key',
             category: 'general',
-            description: 'Your WakaTime API Key, get it from https://wakatime.com/api-key',
+            description: 'Your Hackatime API Key.',
             type: 'password',
             value: ''
         }));
@@ -73,7 +73,7 @@ async function sendHeartbeat() {
         '--project', project.getDisplayName()
     ];
 
-    const url = 'https://api.wakatime.com/api/v1/users/current/heartbeats';
+    const url = 'https://hackatime.hackclub.com/api/hackatime/v1/users/current/heartbeats';
     const body = JSON.stringify({
         project: project.getDisplayName(),
     });
