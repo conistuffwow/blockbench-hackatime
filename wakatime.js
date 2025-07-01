@@ -226,7 +226,7 @@ function getLatestCliVersion(callback) {
         url: 'https://api.github.com/repos/wakatime/wakatime-cli/releases/latest',
         json: true,
         headers: {
-            'User-Agent': 'github.com/HibiscusMC/blockbench-wakatime',
+            'User-Agent': 'github.com/conistuffwow/blockbench-hackatime',
         }
     };
     try {
